@@ -2,8 +2,8 @@
 
 $packageName= 'msys2-installer'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'http://repo.msys2.org/distrib/i686/msys2-i686-20150916.exe'
-$url64 = 'http://repo.msys2.org/distrib/x86_64/msys2-x86_64-20150916.exe'
+$url = 'http://repo.msys2.org/distrib/i686/msys2-i686-20160205.exe'
+$url64 = 'http://repo.msys2.org/distrib/x86_64/msys2-x86_64-20160205.exe'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -13,9 +13,9 @@ $packageArgs = @{
   url64bit      = $url64
   
   # Checksums can be found here: http://www.msys2.org/
-  checksum      = '5282b05da1424f0b500eea85d92155ee7fe70050a30f0274d388fcf3deed81ec'
+  checksum      = '37ccf5bc416545079f03382633c3842a0d93a559009fc56280d6b966c1642c41'
   checksumType  = 'sha256'
-  checksum64    = '684c604895bd4f612912c29e06b88bbda23ee9feec72ec5ec434e8d8e1456879'
+  checksum64    = '3c0673086ff41776de88935d60bff4bdcd6455ab72adb47575fae49d3e671f21'
   checksumType64= 'sha256'
 
   # WARNING: Installer seems to get stuck on "SHOW FINISHED PAGE" page when you use -v (verbose)
