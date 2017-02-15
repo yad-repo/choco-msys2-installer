@@ -1,6 +1,6 @@
 version: '20150916.0.{build}'
 build_script:
-    - ps: choco pack msys2-installer.nuspec --version="$env:appveyor_build_version"
+    - ps: choco pack msys2-installer.nuspec --version="20150916.0.0"
 
 artifacts:
     - path: .\*.nupkg
