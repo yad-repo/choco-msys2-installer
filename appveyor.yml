@@ -1,0 +1,13 @@
+version: '20150916.0.{build}'
+build_script:
+    - ps: choco pack msys2-installer.nuspec --version="$env:appveyor_build_version"
+
+artifacts:
+    - path: .\*.nupkg
+
+deploy:
+    -   provider: Environment
+        name: Chocolatey
+        on:
+            branch: master
+            APPVEYOR_REPO_TAG: true

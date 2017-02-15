@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces 
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements 
+-->
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>msys2-installer</id>
+    <title>msys2-installer</title>
+    <version>20150916.0.0</version>
+    <authors>Alexpux, martell, mingwandroid, elieux, renatosilva, niXman</authors>
+    <owners>yad-repo</owners>
+    <summary>A Cygwin-derived software distro for Windows using Arch Linux's Pacman</summary>
+    <description>This lightweight package performs an unattended installation of MSYS2 using official installer.</description>
+    <projectUrl>http://www.msys2.org/</projectUrl>
+    <packageSourceUrl>https://github.com/yad-repo/choco-msys2-installer/</packageSourceUrl>
+    <projectSourceUrl>https://github.com/Alexpux/MSYS2-packages</projectSourceUrl>
+    <docsUrl>https://github.com/msys2/msys2/wiki</docsUrl>
+    <tags>msys2 msys cygwin mingw pacman bash makepkg gcc</tags>
+    <copyright>MSYS2 Copyright (c) 2013, Алексей</copyright>
+    <licenseUrl>https://github.com/Alexpux/MSYS2-packages/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://cdn.rawgit.com/yad-repo/choco-msys2-installer/master/msys2.png</iconUrl>
+    <releaseNotes>
+    ## 2017-02-15
+    Initial package release of all versions
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
