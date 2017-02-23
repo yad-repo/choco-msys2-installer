@@ -10,25 +10,33 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>msys2-installer</id>
-    <title>msys2-installer</title>
+    <title>MSYS2 Installer</title>
     <version>20160205.0.0</version>
     <authors>Alexpux, martell, mingwandroid, elieux, renatosilva, niXman</authors>
     <owners>yad-repo</owners>
     <summary>A Cygwin-derived software distro for Windows using Arch Linux's Pacman</summary>
-    <description>This lightweight package performs an unattended installation of MSYS2 using official installer.</description>
+    <description>This lightweight package performs an unattended installation of MSYS2 using official installer. 
+    It is intended as an alternative to [msys2](https://chocolatey.org/packages/msys2) and [msys2.install](https://chocolatey.org/packages/msys2.install) packages 
+    which might be a better choice for some users.
+    
+    Major differences when compared to [MSYS2](https://chocolatey.org/packages/msys2) package:
+     - Installation is performed from official `.exe` binaries instead of `.tar.xz` archives
+     - Unattended installation only without any additional customization or configuration (not even `pacman --noconfirm -Syuu`)
+    
+    Major differences when compared to [msys2.install](https://chocolatey.org/packages/msys2.install) package:
+     - `msys2.install` package is currently broken and not yet approved
+     - Support for unattended uninstall
+     - QtInstaller window is visible so that user can track progress and optionally answer MessageBox that is hard to automate (e.g. Corrupt_Installation_Error)
+    </description>
     <projectUrl>http://www.msys2.org/</projectUrl>
     <packageSourceUrl>https://github.com/yad-repo/choco-msys2-installer/</packageSourceUrl>
     <projectSourceUrl>https://github.com/Alexpux/MSYS2-packages</projectSourceUrl>
     <docsUrl>https://github.com/msys2/msys2/wiki</docsUrl>
-    <tags>msys2 msys cygwin mingw pacman bash makepkg gcc</tags>
+    <tags>msys2 msys cygwin mingw pacman bash makepkg gcc admin</tags>
     <copyright>MSYS2 Copyright (c) 2013, Алексей</copyright>
     <licenseUrl>https://github.com/Alexpux/MSYS2-packages/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>http://cdn.rawgit.com/yad-repo/choco-msys2-installer/master/msys2.png</iconUrl>
-    <releaseNotes>
-    ## 2017-02-15
-    Initial package release of all versions
-    </releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
