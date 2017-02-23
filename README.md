@@ -1,8 +1,9 @@
 # choco-msys2-installer
-[![AppVeyor status](https://ci.appveyor.com/api/projects/status/github/yad-repo/choco-msys2-installer?branch=master&svg=true)](https://ci.appveyor.com/project/yad-repo/choco-msys2-installer)
+[![AppVeyor status](https://ci.appveyor.com/api/projects/status/github/yad-repo/choco-msys2-installer?svg=true)](https://ci.appveyor.com/project/yad-repo/choco-msys2-installer)
 
-MSYS2 is a Cygwin-derived software distro for Windows that uses Arch Linux's Pacman. 
-This lightweight package performs an unattended installation of MSYS2 using official installer. 
+[MSYS2](http://www.msys2.org/) is a Cygwin-derived software distro for Windows that uses Arch Linux's Pacman. 
+[MSYS2 Installer](https://chocolatey.org/packages/msys2-installer/) is a lightweight [Chocolatey](https://chocolatey.org/) package 
+that performs an unattended installation of MSYS2 using official installer. 
 
 ## Testing
 
