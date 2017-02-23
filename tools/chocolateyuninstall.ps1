@@ -6,7 +6,7 @@ $softwareName = 'MSYS2 *'
 $installerType = 'exe'
 
 # Note: We are not using --platform minimal as the uninstallation could get stuck on Corrupt_Installation_Error message box
-$silentArgs = "--script `"$toolsDir\msys2uninstall.js`""
+$silentArgs = "--script `"$toolsDir\msys2uninstall.qs`""
 $validExitCodes = @(0)
 
 $uninstalled = $false

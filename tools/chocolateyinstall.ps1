@@ -19,7 +19,7 @@ $packageArgs = @{
   checksumType64= 'sha256'
 
   # WARNING: Installer seems to get stuck on "SHOW FINISHED PAGE" page when you use -v (verbose)
-  silentArgs    = "--script `"$toolsDir\msys2install.js`""
+  silentArgs    = "--script `"$toolsDir\msys2install.qs`""
   validExitCodes= @(0)
 }
 
