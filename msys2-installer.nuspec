@@ -11,7 +11,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
   <metadata>
     <id>msys2-installer</id>
     <title>MSYS2 Installer</title>
-    <version>20160921.0.0</version>
+    <version>20161025.0.0</version>
     <authors>Alexpux, martell, mingwandroid, elieux, renatosilva, niXman</authors>
     <owners>yad-repo</owners>
     <summary>A Cygwin-derived software distro for Windows using Arch Linux's Pacman</summary>
