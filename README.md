@@ -19,5 +19,5 @@ choco uninstall -y -fdv msys2-installer
 ## Known issues
 
  - Running `choco` from MSYS2 bash (when on PATH)
-  - In certain situations you might experience exception `Item has already been added. Key in dictionary: 'TMP'  Key being added: 'tmp'` or notice that CTRL+C handler does not work as expected
-  - Typical workaround is to use `winpty`, e.g. `pacman -S --noconfirm --needed winpty && winpty choco install msys2-installer`
+   - In certain situations you might experience exception `Item has already been added. Key in dictionary: 'TMP'  Key being added: 'tmp'` or notice that CTRL+C handler does not work as expected
+   - Typical workaround is to use `winpty`, e.g. `pacman -S --noconfirm --needed winpty && winpty choco install msys2-installer`
