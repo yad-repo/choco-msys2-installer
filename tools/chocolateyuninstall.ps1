@@ -6,26 +6,34 @@ $softwareName = 'MSYS2 *'
 $installerType = 'exe'
 
 # Note: We are not using --platform minimal as the uninstallation could get stuck on Corrupt_Installation_Error message box
-$silentArgs = "--script `"$toolsDir\msys2uninstall.qs`""
+$silentArgs = "--script `"$toolsDir\auto-install.qs`" --verbose"
 $validExitCodes = @(0)
 
 $uninstalled = $false
 
-# Note: During testing the following statement was returing array with empty element. 
-# This needs further investigation. Let's stick to direct registry access for now. 
+# TODO: Check if following approach would work as well
 #[array]$key = Get-UninstallRegistryKey -SoftwareName $softwareName
 
-[array]$key = Get-ItemProperty  -Path @('HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
-                                       'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*',
-                                       'HKCU:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
-                                       'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*') `
-                                -ErrorAction:SilentlyContinue `
-  | Where-Object   {$_.DisplayName -like $softwareName}
+$uninstallKeys = @(
+  'HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
+  'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*',
+  'HKCU:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
+  'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*'
+)
+[array]$keys = `
+  Get-ItemProperty -Path $uninstallKeys -ErrorAction:SilentlyContinue `
+  | Where-Object {
+    ($_.DisplayName -like $softwareName) -and (Test-Path -Path $_.UninstallString -PathType Leaf)
+  }
 
-$key `
+Write-Host $keys
+
+$keys `
 | ForEach-Object {
-  Uninstall-ChocolateyPackage -PackageName "$packageName" `
-                             -FileType "$installerType" `
-                             -SilentArgs "$($silentArgs)" `
-                             -File "$($_.UninstallString)" `
-                             -ValidExitCodes $validExitCodes}
+  Uninstall-ChocolateyPackage `
+    -PackageName "$packageName" `
+    -FileType "$installerType" `
+    -SilentArgs "$($silentArgs)" `
+    -File "$($_.UninstallString)" `
+    -ValidExitCodes $validExitCodes
+}
