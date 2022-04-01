@@ -11,34 +11,31 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
   <metadata>
     <id>msys2-installer</id>
     <title>MSYS2 Installer</title>
-    <version>20160921.0.0</version>
+    <version>20220319.0.0</version>
     <authors>Alexpux, martell, mingwandroid, elieux, renatosilva, niXman</authors>
     <owners>yad-repo</owners>
     <summary>A Cygwin-derived software distro for Windows using Arch Linux's Pacman</summary>
-    <description>This lightweight package performs an unattended installation of MSYS2 using official installer. 
-    It is intended as an alternative to [msys2](https://chocolatey.org/packages/msys2) and [msys2.install](https://chocolatey.org/packages/msys2.install) packages 
-    which might be a better choice for some users.
-    
-    Major differences when compared to [MSYS2](https://chocolatey.org/packages/msys2) package:
-     - Installation is performed from official `.exe` binaries instead of `.tar.xz` archives
-     - Unattended installation only without any additional customization or configuration (not even `pacman --noconfirm -Syuu`)
-    
-    Major differences when compared to [msys2.install](https://chocolatey.org/packages/msys2.install) package:
-     - `msys2.install` package is currently broken and not yet approved
-     - Support for unattended uninstall
-     - QtInstaller window is visible so that user can track progress and optionally answer MessageBox that is hard to automate (e.g. Corrupt_Installation_Error)
-    </description>
+    <description><![CDATA[This Chocolatey package performs an unattended installation of MSYS2 using the official .exe installer.
+
+Please also check [msys2](https://chocolatey.org/packages/msys2) package that performs more advanced installation and might be a better choice for some users.
+
+Major differences when compared to [MSYS2](https://chocolatey.org/packages/msys2) package:
+  - Installation is performed from official `.exe` installer instead of `.tar.xz` archive
+  - Installation stops without performing any additional customization or configuration (not even `pacman --noconfirm -Syuu`)
+]]></description>
     <projectUrl>http://www.msys2.org/</projectUrl>
     <packageSourceUrl>https://github.com/yad-repo/choco-msys2-installer/</packageSourceUrl>
     <projectSourceUrl>https://github.com/Alexpux/MSYS2-packages</projectSourceUrl>
-    <docsUrl>https://github.com/msys2/msys2/wiki</docsUrl>
+    <docsUrl>https://www.msys2.org/wiki/Home/</docsUrl>
     <tags>msys2 msys cygwin mingw pacman bash makepkg gcc admin</tags>
     <copyright>MSYS2 Copyright (c) 2013, Алексей</copyright>
     <licenseUrl>https://github.com/Alexpux/MSYS2-packages/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>http://cdn.rawgit.com/yad-repo/choco-msys2-installer/master/msys2.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/yad-repo/choco-msys2-installer@3b1ef844ca02f7bce4e33003deaae174b95ddbc6/msys2.png</iconUrl>
   </metadata>
   <files>
-    <file src="tools\**" target="tools" />
+    <file src="tools\auto-install.qs" target="tools" />
+    <file src="tools\chocolateyinstall.ps1" target="tools" />
+    <file src="tools\chocolateyuninstall.ps1" target="tools" />
   </files>
 </package>
